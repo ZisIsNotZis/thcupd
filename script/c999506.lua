@@ -22,6 +22,7 @@ function c999506.lvcost(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 
 function c999506.lvfilter(c)
+	--TBD: must have level to make this effect reasonable, return c:IsFaceup() and not c:IsType(TYPE_XYZ)
 	return c:IsFaceup() and not (c:IsType(TYPE_XYZ) and c:IsRace(RACE_PLANT))
 end
 

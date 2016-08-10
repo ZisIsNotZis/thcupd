@@ -2,7 +2,7 @@
 --人类代表的魔法使
 function c10004.initial_effect(c)
 	--synchro summon
-	aux.AddSynchroProcedure(c,nil,aux.NonTuner(Card.IsSetCard,0x208),1)
+	aux.AddSynchroProcedure(c,nil,aux.FilterBoolFunction(Card.IsSetCard,0x208),1)
 	c:EnableReviveLimit()
 	--eqiup
 	local e1=Effect.CreateEffect(c)

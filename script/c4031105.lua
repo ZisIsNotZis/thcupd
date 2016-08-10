@@ -11,7 +11,7 @@ function c4031105.initial_effect(c)
 	e1:SetTarget(c4031105.thtg)
 	e1:SetOperation(c4031105.thop)
 	c:RegisterEffect(e1)
-     --
+	--TBD: not ignition???
 	local e2=Effect.CreateEffect(c)
 	e2:SetDescription(aux.Stringid(4031105,1))
 	e2:SetCategory(CATEGORY_DISABLE)
