@@ -20,7 +20,7 @@ function c13039.initial_effect(c)
 end
 function c13039.filter(c)
 	--helper: for following fix
-	return c:GetSequence()<5 and c:IsDestructable()or c:IsLocation(LOCATION_HAND)
+	return (c:GetSequence()<5 and c:IsDestructable())or c:IsLocation(LOCATION_HAND)
 end
 function c13039.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsPlayerCanDraw(tp,1) and Duel.IsPlayerCanDraw(1-tp,1) 
