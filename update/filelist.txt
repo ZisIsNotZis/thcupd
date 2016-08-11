@@ -3404,7 +3404,7 @@ script/c25147.lua	b953de036a126d9eb58435a889806377
 script/c25150.lua	9acb034ebfe4a5411fae70d6416d4e31
 script/c25151.lua	9b8dd71c791c2ff1af6f0f70cc67445b
 script/c25152.lua	11d9f1ed6833edc5fb9e6dd8413eacd3
-script/c25153.lua	162593ee38dc9583e11460fa25bf67e7
+script/c25153.lua	3a02f8443db2448984f0ebc3be9f98eb
 script/c25154.lua	cb4011c8e6ca772d26ab4d656f98ad11
 script/c25155.lua	97fec31d34e41e925e4cad7a6d504114
 script/c25164.lua	ce401e3b8461aa9defd03fbe18a6e4a5
@@ -3945,7 +3945,7 @@ script/c999720.lua	961c12070b1b5a24fc0c62b4243f22a7
 script/constant.lua	baa32d1670c821b6440f030f68d3e634
 script/utility.lua	cbd1909b7ed832f830534b6a70e337bd
 update/delete.txt	c9b2ae557a77257e12e9a5599336afeb
-update/filelist.txt	d75d24e3915964f1c64a01cbdaeaafc1
+update/filelist.txt	96b61b9cf1a53fd675a2a7e07eeefca6
 update/rename.txt	cbfaccc657e73040ec051233017b2c4d
 update/update-server.bat	906682e2c43e33f9f06a058cea7da7bf
-update/version.txt	8729826a67d788029069d5b2597db420
+update/version.txt	bb38f5bf118651e20b8b289a4bf34a7d
