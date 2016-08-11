@@ -19,7 +19,8 @@ function c13039.initial_effect(c)
 	c:RegisterEffect(e2)
 end
 function c13039.filter(c)
-	return c:GetSequence()<5 and c:IsDestructable()
+	--helper: for following fix
+	return c:GetSequence()<5 and c:IsDestructable()or c:IsLocation(LOCATION_HAND)
 end
 function c13039.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsPlayerCanDraw(tp,1) and Duel.IsPlayerCanDraw(1-tp,1) 
@@ -29,8 +30,9 @@ function c13039.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.SetOperationInfo(0,CATEGORY_DRAW,nil,0,PLAYER_ALL,1)
 end
 function c13039.activate(e,tp,eg,ep,ev,re,r,rp)
-	local g1=Duel.SelectMatchingCard(tp,aux.TRUE,tp,LOCATION_HAND+LOCATION_SZONE,0,1,1,e:GetHandler())
-	local g2=Duel.SelectMatchingCard(1-tp,aux.TRUE,tp,0,LOCATION_HAND+LOCATION_SZONE,1,1,nil)
+	--fix: able to destory PZONE and FZONE
+	local g1=Duel.SelectMatchingCard(tp,c13039.filter,tp,LOCATION_HAND+LOCATION_SZONE,0,1,1,e:GetHandler())
+	local g2=Duel.SelectMatchingCard(1-tp,c13039.filter,tp,0,LOCATION_HAND+LOCATION_SZONE,1,1,nil)
 	g1:Merge(g2)
 	Duel.Destroy(g1,REASON_EFFECT)
 	Duel.BreakEffect()

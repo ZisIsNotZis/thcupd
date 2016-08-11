@@ -21,10 +21,12 @@ function c26051.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.Remove(g,POS_FACEUP,REASON_COST)
 end
 function c26051.filter(c)
-	return c:IsPosition(POS_DEFENCE) or c:IsPosition(POS_FACEDOWN)
+	--fix: mismatch discription
+	return c:IsPosition(POS_DEFENCE)
 end
 function c26051.target(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return Duel.GetFieldGroupCount(1-tp,LOCATION_MZONE,LOCATION_MZONE) end
+	--fix: able to activate when there's no defense monster at all
+	if chk==0 then return Duel.IsExistingMatchingCard(Card.IsPosition,0,LOCATION_MZONE,LOCATION_MZONE,1,nil,POS_DEFENCE)end
 	local g=Duel.GetMatchingGroup(c26051.filter,tp,LOCATION_MZONE,LOCATION_MZONE,nil)
 	Duel.SetOperationInfo(0,CATEGORY_POSITION,g,g:GetCount(),0,0)
 end

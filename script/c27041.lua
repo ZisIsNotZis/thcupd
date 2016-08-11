@@ -10,10 +10,14 @@ function c27041.initial_effect(c)
 	e1:SetTarget(c27041.target)
 	e1:SetOperation(c27041.activate)
 	c:RegisterEffect(e1)
+	--helper: for following fix
+	c27041[0]=0
+	c27041[1]=0
 end
 function c27041.cost(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return Duel.GetFlagEffect(tp,27041)==0 end
-	Duel.RegisterFlagEffect(tp,27041,RESET_PHASE+PHASE_END,0,3)
+	--fix: like "1回合只能发动1张", different counter for different player
+	if chk==0 then return c27041[tp]<Duel.GetTurnCount() end
+	c27041[tp]=Duel.GetTurnCount()+3
 end
 function c27041.filter(c)
 	return c:IsSetCard(0x208) or not c:IsType(TYPE_MONSTER)
